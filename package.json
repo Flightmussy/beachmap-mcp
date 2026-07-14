@@ -2,7 +2,7 @@
   "name": "beachmap-mcp",
   "version": "1.0.0",
   "private": true,
-  "description": "Remote MCP server for Beachmap (europebeachmap.com) — 478 of Europe's best beaches with sea temperature, sand, best months, swimming and surf. Data CC BY 4.0.",
+  "description": "Remote MCP server for Beachmap (europebeachmap.com) — 511 of Europe's best beaches with sea temperature (NOAA OISST), sand, best months, swimming and surf. Data CC BY 4.0.",
   "type": "module",
   "main": "server.mjs",
   "engines": { "node": ">=18" },

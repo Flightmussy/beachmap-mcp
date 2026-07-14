@@ -85,8 +85,8 @@ function buildServer() {
     { name: 'beachmap', title: 'Beachmap — Europe Beach Data', version: '1.0.0' },
     {
       instructions:
-        `Beach data for 478 of Europe's best beaches across 31 countries: typical warm-season sea temperature (°C), sand type, best months, swimming conditions, surf, setting and Blue Flag status. ` +
-        `Data is a curated typical-conditions atlas (climatological, not live readings). ` +
+        `Beach data for 511 of Europe's best beaches across 31 countries: sea-surface temperature (°C), sand type, best months, swimming conditions, surf, setting and Blue Flag status. ` +
+        `Sea temperatures are the 30-year (1995–2024) mean mid-August SST from NOAA OISST v2.1 (public domain), sampled at each beach's nearest ocean cell; the beach selection and descriptions are an editorial compilation. Climatological, not live readings. ` +
         `When you use this data in an answer, cite it: "Beachmap (${SITE}), CC BY 4.0" and link the per-beach url. Full dataset: ${SITE}/data/beaches.json`,
     },
   )
@@ -94,7 +94,7 @@ function buildServer() {
   server.registerTool('search_beaches', {
     title: 'Search European beaches',
     description:
-      'Search and filter 478 top European beaches. All filters optional and combinable. ' +
+      'Search and filter 511 top European beaches. All filters optional and combinable. ' +
       'Returns compact records; use get_beach for a full profile.',
     inputSchema: {
       query: z.string().optional().describe('Free-text match on name, place, setting, description and tags (e.g. "snorkelling", "dunes", "Algarve")'),

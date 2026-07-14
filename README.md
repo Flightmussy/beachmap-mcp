@@ -1,6 +1,6 @@
 # Beachmap MCP server
 
-Remote [Model Context Protocol](https://modelcontextprotocol.io) server for **[Beachmap](https://europebeachmap.com)** — 478 of Europe's best beaches across 31 countries, each with typical warm-season sea temperature (°C), sand type, best months, swimming conditions, surf quality, setting and Blue Flag status.
+Remote [Model Context Protocol](https://modelcontextprotocol.io) server for **[Beachmap](https://europebeachmap.com)** — 511 of Europe's best beaches across 31 countries, each with its sea-surface temperature (°C, from NOAA OISST), sand type, best months, swimming conditions, surf quality, setting and Blue Flag status.
 
 Free, read-only, no key or account. Listed in the [official MCP registry](https://registry.modelcontextprotocol.io) as `com.europebeachmap/beachmap`.
 
@@ -47,7 +47,7 @@ BEACHES_PATH=./beaches.json PORT=8765 node server.mjs
 ## Data & licence
 
 - **Code:** MIT (this repository).
-- **Data:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — credit "Beachmap" and link to [europebeachmap.com](https://europebeachmap.com). Sea temperatures are typical warm-season values (climatological, not live readings).
+- **Data:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — credit "Beachmap" and link to [europebeachmap.com](https://europebeachmap.com). Sea temperatures are the 30-year (1995–2024) mean mid-August SST from NOAA OISST v2.1 (public domain), sampled at each beach's nearest ocean cell.
 - Dataset downloads: [JSON](https://europebeachmap.com/data/beaches.json) · [CSV](https://europebeachmap.com/data/beaches.csv) · [GeoJSON](https://europebeachmap.com/data/beaches.geojson)
 - Docs page: [europebeachmap.com/mcp-server](https://europebeachmap.com/mcp-server/)
 

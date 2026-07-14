@@ -2,9 +2,13 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.europebeachmap/beachmap",
   "title": "Beachmap — Europe Beach Data",
-  "description": "Europe's 478 best beaches: sea temperature, sand, best months, swimming, surf. Free, CC BY 4.0.",
-  "version": "1.0.0",
+  "description": "Europe's 511 best beaches: sea temperature (NOAA OISST), sand, best months, swimming, surf. Free, CC BY 4.0.",
+  "version": "1.0.1",
   "websiteUrl": "https://europebeachmap.com/mcp-server/",
+  "repository": {
+    "url": "https://github.com/Flightmussy/beachmap-mcp",
+    "source": "github"
+  },
   "remotes": [
     {
       "type": "streamable-http",
