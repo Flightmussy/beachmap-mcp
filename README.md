@@ -1,13 +1,13 @@
 # Beachmap MCP server
 
-Remote [Model Context Protocol](https://modelcontextprotocol.io) server for **[Beachmap](https://europebeachmap.com)** — 511 of Europe's best beaches across 31 countries, each with its sea-surface temperature (°C, from NOAA OISST), sand type, best months, swimming conditions, surf quality, setting and Blue Flag status.
+Remote [Model Context Protocol](https://modelcontextprotocol.io) server for **[World Beach Map](https://beachmapworld.com)** — beaches worldwide from Wikidata, each with **twelve monthly sea-surface temperatures** from NOAA OISST v2.1, its shore type, its Wikipedia article and its photograph credit.
 
-Free, read-only, no key or account. Listed in the [official MCP registry](https://registry.modelcontextprotocol.io) as `com.europebeachmap/beachmap`.
+Free, read-only, no key or account. Listed in the [official MCP registry](https://registry.modelcontextprotocol.io) as `com.europebeachmap/beachmap` — the namespace keeps the site's former domain, because a registry namespace is bound to the name it was verified under and cannot be renamed. The old endpoint, `https://europebeachmap.com/mcp`, therefore keeps answering rather than redirecting: a JSON-RPC client reads a 301 as a protocol error, not as a new address.
 
 ## Endpoint
 
 ```
-https://europebeachmap.com/mcp
+https://beachmapworld.com/mcp
 ```
 
 Streamable HTTP transport, stateless, no authentication.
@@ -15,13 +15,13 @@ Streamable HTTP transport, stateless, no authentication.
 **Claude Code:**
 
 ```bash
-claude mcp add --transport http beachmap https://europebeachmap.com/mcp
+claude mcp add --transport http beachmap https://beachmapworld.com/mcp
 ```
 
-**Claude / ChatGPT / other clients with remote MCP support** — add `https://europebeachmap.com/mcp` as a custom connector, or use the generic config:
+**Claude / ChatGPT / other clients with remote MCP support** — add `https://beachmapworld.com/mcp` as a custom connector, or use the generic config:
 
 ```json
-{ "mcpServers": { "beachmap": { "type": "http", "url": "https://europebeachmap.com/mcp" } } }
+{ "mcpServers": { "beachmap": { "type": "http", "url": "https://beachmapworld.com/mcp" } } }
 ```
 
 ## Tools
@@ -39,7 +39,7 @@ The server reads the open Beachmap dataset from disk:
 
 ```bash
 npm install
-curl -o beaches.json https://europebeachmap.com/data/beaches.json
+curl -o beaches.json https://beachmapworld.com/data/beaches.json
 BEACHES_PATH=./beaches.json PORT=8765 node server.mjs
 # MCP endpoint on http://127.0.0.1:8765/mcp
 ```
@@ -47,12 +47,11 @@ BEACHES_PATH=./beaches.json PORT=8765 node server.mjs
 ## Data & licence
 
 - **Code:** MIT (this repository).
-- **Data:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — credit "Beachmap" and link to [europebeachmap.com](https://europebeachmap.com). Sea temperatures are the 30-year (1995–2024) mean mid-August SST from NOAA OISST v2.1 (public domain), sampled at each beach's nearest ocean cell.
-- Dataset downloads: [JSON](https://europebeachmap.com/data/beaches.json) · [CSV](https://europebeachmap.com/data/beaches.csv) · [GeoJSON](https://europebeachmap.com/data/beaches.geojson)
-- Docs page: [europebeachmap.com/mcp-server](https://europebeachmap.com/mcp-server/)
+- **Data:** beach records from [Wikidata](https://www.wikidata.org) (CC0), sea temperature from [NOAA OISST v2.1](https://www.ncei.noaa.gov/products/optimum-interpolation-sst) (public domain). A credit and a link to [beachmapworld.com](https://beachmapworld.com) are appreciated, not required. Each beach carries **twelve monthly means** (the 1991–2020 long-term monthly mean), sampled at the nearest grid cell that is open water in all twelve months.
+- Dataset downloads: [JSON](https://beachmapworld.com/data/beaches.json) · [CSV](https://beachmapworld.com/data/beaches.csv) · [GeoJSON](https://beachmapworld.com/data/beaches.geojson)
 
 Citation:
 
 ```
-Beach data: Beachmap (https://europebeachmap.com), CC BY 4.0
+Beach data: Beachmap (https://beachmapworld.com), Wikidata CC0 · NOAA public domain
 ```
